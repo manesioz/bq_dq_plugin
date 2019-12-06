@@ -1,5 +1,5 @@
 # bq_dq_plugin
-Airflow plug-in that extends the BigQueryCheckOperator to automate Data Quality checks. 
+Airflow plug-in that extends the `BigQueryIntervalCheckOperator` to automate Data Quality checks. 
 
 Out-of-the-box checks: 
 

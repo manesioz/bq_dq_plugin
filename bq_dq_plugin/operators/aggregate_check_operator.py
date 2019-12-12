@@ -74,6 +74,7 @@ class AggregateCheckOperator(BaseOperator):
         select {sqlexp}, TIMESTAMP_TRUNC({date_filter_column}, {agg_time_period}) as AGG_TIME 
           from {table}
           where  {date_filter_column} between {start_time} and {end_time}
+          group by AGG_TIME
         )
         select {agg_metrics} from init_data'''.format(sqlexp=sqlexp, date_filter_column=date_filter_column, table=table,
             agg_time_period=agg_time_period, start_time=start_time, end_time=end_time, agg_metrics=agg_metrics)
